@@ -6,12 +6,12 @@ on:
     branches: [master]
 jobs:
   build:
+    runs-on: ubntu-latest
     env:
       CI: true
-      strategy:
+    strategy:
         matrix:
           node-version: [16.x, 18.x]
-    runs-on: ubntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js version 18
